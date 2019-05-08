@@ -10,40 +10,41 @@
  */
 
 // Principle 1
-function greetMe(name) {
+function GreetMe(name) {
   console.log("Hello " + name);
-  console.log(this);
 }
-greetMe("John");
+GreetMe("John");
 // code example for Window Binding
 
 // Principle 2
-var greetMe = {
+let greetUs = {
   greeting: "Hello ",
   speak: function(name) {
     console.log(this.greeting + name);
-    console.log(this);
   }
 };
 
-greetMe.speak("John");
+greetUs.speak("Tayo");
 // code example for Implicit Binding
 
 // Principle 3
-function GreetMe(name) {
+function GreetMeAgain(name) {
   this.greeting = "Hello ";
   this.name = name;
   this.speak = function() {
     console.log(this.greeting + this.name);
-    console.log(this);
   };
 }
+GreetMeAgain.prototype.sayGoodbye = function() {
+    console.log('Goodbye ' + this.name);
+};
 
-var greetJohn = new GreetMe("John");
-var greetJane = new GreetMe("Jane");
+let greetJohn = new GreetMeAgain("John");
+let greetJane = new GreetMeAgain("Jane");
 
-greetJohn.speak();
-greetJane.speak();
+greetJohn.sayGoodbye();
+greetJane.sayGoodbye();
+
 // code example for New Binding
 
 // Principle 4
