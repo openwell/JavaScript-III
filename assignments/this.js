@@ -42,10 +42,6 @@ function GreetMe(name) {
 var greetJohn = new GreetMe("John");
 var greetJane = new GreetMe("Jane");
 
-GreetMe.prototype.sayGoodbye = function() {
-    console.log('Goodbye ' + this.name);
-    console.log(this);
-};
 greetJohn.speak();
 greetJane.speak();
 // code example for New Binding
